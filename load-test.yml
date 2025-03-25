@@ -1,0 +1,13 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 5       # 5 секунд
+      arrivalRate: 500  # 500 запросов/сек
+    - duration: 5       # 5 секунд
+      arrivalRate: 1000 # 1000 запросов/сек
+scenarios:
+  - flow:
+      - post:
+          url: "/withdraw/c932f3fc-fde9-46a0-b719-1a4d31264bf1"
+          json:
+            amount: 2
