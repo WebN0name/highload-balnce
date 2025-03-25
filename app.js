@@ -9,7 +9,6 @@ const app = express();
 
 app.use(bodyParser.json());
 
-// Создаем новый маршрутизатор
 const router = express.Router();
 
 router.post('/withdraw/:userId', withdrawController.withdraw);
@@ -28,8 +27,8 @@ sequelize.authenticate()
     console.error('Unable to connect to the database:', err);
   });
 
-server.keepAliveTimeout = 0;
-server.maxConnections = 20000;
+  server.keepAliveTimeout = 5000;
+  server.headersTimeout = 7000;
 
 server.listen(PORT, () => {
   console.log(`Worker ${process.pid} is running on http://localhost:${PORT}`);

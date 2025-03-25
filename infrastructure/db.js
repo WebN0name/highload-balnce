@@ -9,9 +9,9 @@ const sequelize = new Sequelize({
   database: process.env.DB_NAME || 'test',
   logging: false,
   pool: {
-    max: 10,
-    min: 2,
-    acquire: 30000,
+    max: 50,
+    min: 5,
+    acquire: 30000, 
     idle: 10000,
   }
 });

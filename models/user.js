@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true
       },
-      balance: {
+      amount: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0
