@@ -1,10 +1,11 @@
 config:
   target: "http://localhost:3000"
   phases:
-    - duration: 5       # 5 секунд
-      arrivalRate: 500  # 500 запросов/сек
-    - duration: 5       # 5 секунд
-      arrivalRate: 1000 # 1000 запросов/сек
+    - duration: 5        
+      arrivalRate: 500  
+      rampTo: 1000      
+    - duration: 5        
+      arrivalRate: 1000 
 scenarios:
   - flow:
       - post:

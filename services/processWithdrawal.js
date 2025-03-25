@@ -38,7 +38,7 @@ const withdrawWorker = new Worker(
   },
   {
     connection: redisClient,
-    concurrency: 5,
+    concurrency: 1,
   }
 );
 
@@ -55,6 +55,6 @@ withdrawWorker.on("failed", (job, err) => {
 setInterval(async () => {
   const counts = await withdrawQueue.getJobCounts();
   console.log("📊 Статистика очереди:", counts);
-}, 5000);
+}, 20000);
 
 module.exports = withdrawQueue;
